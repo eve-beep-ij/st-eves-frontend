@@ -6,8 +6,15 @@ This project is the website only. The server and database are in a separate proj
 
 ## Screenshots
 
-<!-- Add your screenshots here, for example: -->
-<!-- ![Home page](screenshots/home.png) -->
+![Home page](screenshots/home.png)
+
+![Doctors list](screenshots/doctors.png)
+
+![Care team](screenshots/care-team.png)
+
+![Doctor dashboard](screenshots/dashboard.png)
+
+![Calendar](screenshots/calendar.png)
 
 ## What you can do
 
@@ -48,6 +55,7 @@ Each role only sees the pages it is allowed to see. Anyone else gets an "Access 
 - React Icons
 - FullCalendar (the calendar view)
 - jsPDF (prescription PDFs)
+- Axios (talks to the backend)
 - Jitsi Meet (video calls)
 
 ## How to run it on your computer
@@ -69,7 +77,7 @@ npm install
 
 **3. Check the backend address**
 
-Open `src/api.js` and make sure the address in it matches where your backend runs (when you run Django on your own computer, this is usually `http://127.0.0.1:8000`).
+Open `src/api.js`. The backend address is set there as `http://127.0.0.1:8000/api`, which is where Django runs on your own computer. If your backend runs somewhere else, change it.
 
 **4. Start the website**
 
