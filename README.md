@@ -1,16 +1,97 @@
-# React + Vite
+# St Eves Appointment Booking (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The website for **St Eves**, a medical appointment booking system. Patients find a doctor and book a time, doctors manage their day, and staff help run the clinic.
 
-Currently, two official plugins are available:
+This project is the website only. The server and database are in a separate project: [st-eves-api](https://github.com/eve-beep-ij/st-eves-api).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Screenshots
 
-## React Compiler
+<!-- Add your screenshots here, for example: -->
+<!-- ![Home page](screenshots/home.png) -->
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## What you can do
 
-## Expanding the ESLint configuration
+**Everyone**
+- Read about the clinic on the home page
+- Browse the list of doctors and filter them by specialty
+- See a doctor's profile and working hours
+- Register and log in
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Patients**
+- Book an appointment by choosing a doctor and a free time
+- See their appointments grouped into Today, Upcoming and Past
+- Cancel or reschedule an appointment
+- Join a video call for a confirmed appointment
+- Read their visit notes and download prescriptions as a PDF
+- View and edit their profile
+- See their appointments on a calendar
+
+**Doctors**
+- A dashboard with Today, Upcoming and Past appointments
+- Confirm, cancel or complete appointments
+- Set and manage their working days and hours
+- Write visit notes and prescriptions
+- See their list of patients and each patient's details
+- Start a video call with a patient
+- See their appointments on a calendar
+
+**Staff**
+- Help manage appointments, without access to medical notes or video calls
+
+Each role only sees the pages it is allowed to see. Anyone else gets an "Access denied" page.
+
+## Built with
+
+- React (made with Vite)
+- React Router
+- Bootstrap
+- React Icons
+- FullCalendar (the calendar view)
+- jsPDF (prescription PDFs)
+- Jitsi Meet (video calls)
+
+## How to run it on your computer
+
+You need Node.js installed. The backend from [st-eves-api](https://github.com/eve-beep-ij/st-eves-api) should also be running, or the website will have no data.
+
+**1. Download the project**
+
+```
+git clone https://github.com/eve-beep-ij/st-eves-frontend.git
+cd st-eves-frontend
+```
+
+**2. Install the packages**
+
+```
+npm install
+```
+
+**3. Check the backend address**
+
+Open `src/api.js` and make sure the address in it matches where your backend runs (when you run Django on your own computer, this is usually `http://127.0.0.1:8000`).
+
+**4. Start the website**
+
+```
+npm run dev
+```
+
+Then open the link shown in the terminal, usually `http://localhost:5173`.
+
+## Project structure
+
+| Folder or file | What it holds |
+| --- | --- |
+| `src/pages/Public` | Home, doctors list, doctor profile, login, register |
+| `src/pages/Patient` | Patient dashboard, appointments, history, profile, reschedule |
+| `src/pages/Doctor` | Doctor dashboard, schedule, patients, appointment details |
+| `src/pages/Extras` | Prescription and video call pages |
+| `src/components` | Navbar, footer, calendar, protected routes |
+| `src/context` | Login state shared across the app |
+| `src/utils` | Helpers, such as the prescription PDF maker |
+| `src/api.js` | Talks to the backend |
+
+## Author
+
+**Gloria Eve**, full-stack developer.
